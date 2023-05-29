@@ -1,0 +1,44 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+.digimon{
+    &__img-container{
+        animation-name: left;
+        animation-duration: 1s;
+     
+        
+    }
+    &__img-container{
+        display: flex;
+        justify-content: center;
+    }
+    @include m.tablet{
+        &__grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+      
+        &__img{
+           
+            height: 450px;
+        }
+    
+    }
+    @include m.desktop{
+        &__grid{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+    
+
+    
+}
+
+
+@keyframes left{
+    0%{
+        transform: translate(-10rem) skewY(-10deg);
+      
+    }
+   
+}

@@ -1,0 +1,17 @@
+@use '../../abstracts/variables' as v;
+.credits{
+    margin-bottom: 3rem;
+    border-bottom: 1px solid v.$color-muted;
+    padding: 10rem 0;
+    &__grid{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        align-items: center;
+    }
+    &__icon{
+        text-align: center;
+        font-size: 70px;
+        transform: skewX(8deg);
+    }
+
+}

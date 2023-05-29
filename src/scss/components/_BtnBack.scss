@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.btn-back{
+    @include m.btn(v.$color-tertiary,v.$white);
+    border-radius: 50%;
+    font-size: 3rem;
+    padding: 1rem;
+    margin: 0;
+}

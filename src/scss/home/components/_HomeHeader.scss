@@ -1,0 +1,36 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+.home-header{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+    background-image:  linear-gradient(
+        to top, rgb(0 0 0 /.8) 0%, rgb(0 0 0 /.6) 25%, rgb(0 0 0 /.3) 45% , transparent 50%
+    ),url(header.jpg);
+    
+    background-size: cover;
+    height: 400px;
+    color: v.$white;
+    margin-top: -5rem;
+    @include m.tablet{
+        height: 500px;
+        display: grid;
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2,1fr);
+        
+        background-image:  linear-gradient(
+            to right, rgb(0 0 0 /.8) 0%, rgb(0 0 0 /.6) 25%, rgb(0 0 0 /.3) 45% , transparent 50%
+        ),url(header.jpg);
+    }
+
+    &__container{
+        border-radius: 2rem;
+        padding: 2rem;
+
+        grid-row: 2/3;
+
+        @include m.tablet{
+            grid-row: unset;
+        }
+    }
+}

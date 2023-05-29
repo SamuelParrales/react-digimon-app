@@ -1,0 +1,36 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+.digimon-card{
+    border: 1px solid v.$color-muted;
+    border-radius: 1rem;
+    background-color: v.$color-tertiary;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 30rem;
+    
+    color: v.$white;
+    &__img-container{
+        overflow: hidden;
+        max-height: 25rem;
+        border-radius: 1rem;
+        
+    }
+    &__img{
+        transition-property: transform;
+        transition-duration: .3s;
+        transition-timing-function: ease-in;
+        width: 100%;
+        min-width: 20rem;
+        height: 250px;
+        object-fit: cover;
+        &:hover{
+            transform: scale( 1.2);
+        }
+    }
+    &__link{
+        @include m.btn(v.$white,v.$black);
+        display: block;
+    }
+   
+  
+}

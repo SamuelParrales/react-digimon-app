@@ -1,0 +1,18 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+.digimon-list{
+    margin: 5rem auto 0 auto;
+    min-height: 75vh;
+    &__grid{
+        display: grid;
+        gap: 2rem;
+        @include m.tablet{
+            margin: 0 auto;
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include m.desktop{
+            grid-template-columns: repeat(4,1fr);
+            gap: 1rem;
+        }
+    }
+}

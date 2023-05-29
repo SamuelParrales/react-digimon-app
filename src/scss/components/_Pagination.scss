@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: .3rem;
+    background: v.$color-primary;
+    padding: 1.9rem;
+    margin-top: 2rem;
+
+    &__previous-link,
+    &__next-link,
+    &__page-link{
+
+        padding: 1.3rem;
+        border-radius: 50%;
+        color:v.$white;
+        cursor: pointer;
+        font-size: 2rem;
+        user-select: none;
+    }
+    &__link--disabled{
+        color: v.$color-muted;
+    }
+    &__page-link--active{
+        background-color: darken( v.$color-primary, 10% ) !important;
+        cursor: unset !important; 
+    }
+}
