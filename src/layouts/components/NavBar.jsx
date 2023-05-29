@@ -36,7 +36,7 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src="logo.svg" alt="logo" />
+        <img src="/logo.svg" alt="logo" />
       </div>
       <button
         className="navbar__toggler"

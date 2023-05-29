@@ -9,10 +9,12 @@
     ),url(header.jpg);
     
     background-size: cover;
+    background-position: right;
     height: 400px;
     color: v.$white;
     margin-top: -5rem;
     @include m.tablet{
+        background-position: unset;
         height: 500px;
         display: grid;
         grid-template-rows: unset;
