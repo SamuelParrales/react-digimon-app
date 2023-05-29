@@ -1,8 +1,8 @@
 @use '../../abstracts/variables' as v;
 .header-digimons{
     &__heading{
-        line-height: .5;
-   
+        line-height: 1;
+        
         span{
             color: v.$color-primary
         }
