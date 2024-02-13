@@ -1,9 +1,10 @@
+import author from '/author.png';
 
 export const AuthorSection = () => {
   return (
     <section className="author">
         <div className="author__img-container">
-            <img src="author.png" alt="" className="author__img" />
+            <img src={author} alt="" className="author__img" />
         </div>
         <div className="author__content">
             <h2 className="author__name">Samuel Parrales Palma</h2>

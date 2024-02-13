@@ -4,6 +4,7 @@ import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
 import { startLoadingDigimons } from "../../store/digimon/thunks";
 import { useRef } from "react";
+import logo from '/logo.svg';
 
 
 
@@ -36,7 +37,7 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src="/logo.svg" alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
       <button
         className="navbar__toggler"
