@@ -26,4 +26,7 @@
         background-color: darken( v.$color-primary, 10% ) !important;
         cursor: unset !important; 
     }
+    &.hidden{
+        display: none;
+    }
 }

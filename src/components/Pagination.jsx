@@ -1,9 +1,11 @@
 
 import ReactPaginate from "react-paginate";
 import PropTypes from 'prop-types';
+import { useSelector } from "react-redux";
 
 export const Pagination = ({ itemsPerPage,totalElements,onClickLink }) => {
- 
+    const {isLoading}= useSelector((state)=>state.digimon);
+
     const pageCount = Math.ceil(totalElements / itemsPerPage);
 
     const handlePageClick = (event) => {
@@ -11,7 +13,7 @@ export const Pagination = ({ itemsPerPage,totalElements,onClickLink }) => {
     };
     return (
         <ReactPaginate
-            className="pagination"
+            className={`pagination ${isLoading?'hidden':''}`}
             previousClassName="pagination__previous"
             previousLinkClassName="pagination__previous-link"
             pageClassName="pagination__page"
