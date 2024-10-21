@@ -6,13 +6,22 @@ export const startLoadingDigimons = ({query,page=0}={query:'',page:0})=>{
     return async (dispatch)=>{
         dispatch(showLoader());
         dispatch(loadingData());
-        const {data} = await digimonApi.get(`?name=${query}&page=${page}&pageSize=8`)
+        try{
+            
+            const {data} = await digimonApi.get(`digimon?name=${query}&page=${page}&pageSize=8`)
+            const digimons = data.content || []; 
+            dispatch(setData({digimons,pageable:data.pageable}));
+        }
+        catch(e){
+            console.error(e)
+        }
+        finally{
+            dispatch(loadedData());
+            dispatch(hideLoader());
+        }
       
-        const digimons = data.content || []; 
+       
         
-        dispatch(setData({digimons,pageable:data.pageable}));
-        dispatch(loadedData());
-        dispatch(hideLoader());
 
     }   
 }
@@ -21,7 +30,7 @@ export const startLoadingDigimon = (id)=>{
     return async (dispatch)=>{
         dispatch(showLoader());
         dispatch(loadingData());
-        const {data} = await digimonApi.get(`/${id}`);
+        const {data} = await digimonApi.get(`digimon/${id}`);
 
         dispatch(setActiveDigimon(data))
         dispatch(loadedData());
